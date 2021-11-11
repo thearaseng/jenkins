@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - jenkins_home:/var/jenkins_home
+      - "$HOME/docker-volume/jenkins:/var/jenkins_home"
     networks:
       - jenkins_network
   remote_host:
@@ -18,5 +18,3 @@ services:
       - jenkins_network
 networks:
   jenkins_network:
-volumes:
-  jenkins_home:
