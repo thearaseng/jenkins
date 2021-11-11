@@ -9,6 +9,13 @@ services:
       - jenkins_home:/var/jenkins_home
     networks:
       - jenkins_network
+  remote_host:
+    container_name: remote-host
+    image: remote-host
+    build:
+      context: centos8
+    networks:
+      - jenkins_network
 networks:
   jenkins_network:
 volumes:
